@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Research & Debate Society ICUP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0d1b2a;
+    --gold: #c5973a;
+    --gold-light: #e8c06a;
+    --cream: #f5f0e8;
+    --cream-dim: #d9d0be;
+    --text-dim: #9a9285;
+    --border: rgba(197,151,58,0.2);
+  }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  /* HEADER */
+  .page-header { padding: 64px 48px 56px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+  .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--cream); line-height: 1.05; }
+  .header-right { padding-bottom: 8px; }
+  .header-right p { font-size: 16px; color: var(--text-dim); line-height: 1.9; }
+
+  /* MISSION STATEMENT */
+  .mission { padding: 72px 48px; border-bottom: 1px solid var(--border); text-align: center; }
+  .mission-quote { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 40px); font-style: italic; color: var(--gold-light); line-height: 1.5; max-width: 700px; margin: 0 auto 20px; }
+  .mission-attr { font-size: 13px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* WHAT WE DO */
+  .what-header { padding: 48px 48px 0; }
+  .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; color: var(--cream); margin-bottom: 0; }
+
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 0; border-top: 1px solid var(--border); margin-top: 32px; }
+  .pillar { padding: 48px 40px; border-right: 1px solid var(--border); }
+  .pillar:last-child { border-right: none; }
+  .pillar-icon { font-size: 28px; color: var(--gold); margin-bottom: 20px; }
+  .pillar-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--cream); margin-bottom: 12px; }
+  .pillar-text { font-size: 14px; color: var(--text-dim); line-height: 1.85; }
+
+  /* BENEFITS */
+  .benefits-section { border-top: 1px solid var(--border); padding: 56px 48px; }
+  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--border); }
+  .benefit { padding: 32px 36px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .benefit:nth-child(2n) { border-right: none; }
+  .benefit:nth-last-child(-n+2) { border-bottom: none; }
+  .benefit-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: rgba(197,151,58,0.2); line-height: 1; margin-bottom: 12px; }
+  .benefit-title { font-size: 15px; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
+  .benefit-text { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
+
+  /* CTA */
+  .cta-band { padding: 56px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .cta-text h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--cream); margin-bottom: 8px; }
+  .cta-text p { font-size: 14px; color: var(--text-dim); }
+  .cta-btns { display: flex; gap: 16px; }
+  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-outline { display: inline-block; padding: 13px 28px; background: transparent; color: var(--cream-dim); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 14px; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    .page-header { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px 40px; }
+    h1 { font-size: 36px; }
+    .mission { padding: 48px 24px; }
+    .what-header { padding: 40px 24px 0; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
+    .pillar:last-child { border-bottom: none; }
+    .benefits-section { padding: 40px 24px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .benefit { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 28px 24px; }
+    .benefit:last-child { border-bottom: none !important; }
+    .cta-band { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    .cta-btns { flex-direction: column; width: 100%; }
+    .btn-gold, .btn-outline { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div>
+    <div class="eyebrow">Who We Are</div>
+    <h1>About the<br>Society</h1>
+  </div>
+  <div class="header-right">
+    <p>The Research &amp; Debate Society (RDS) at Islamia College University Peshawar is a student-led intellectual society dedicated to fostering rigorous academic discourse, critical thinking, and evidence-based debate on the issues that shape our world.</p>
+  </div>
+</div>
+
+<!-- MISSION -->
+<div class="mission">
+  <div class="mission-quote">"Knowledge as a Human Right"</div>
+  <div class="mission-attr">Our founding principle</div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="what-header">
+  <div class="section-label">Our Purpose</div>
+  <div class="section-heading">What We Stand For</div>
+</div>
+<div class="pillars">
+  <div class="pillar">
+    <div class="pillar-icon">✦</div>
+    <div class="pillar-title">Research &amp; Publishing</div>
+    <p class="pillar-text">We publish student-written articles, opinion pieces, and research papers across history, politics, science, and social issues — giving young researchers a credible platform for their ideas.</p>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">◈</div>
+    <div class="pillar-title">Critical Debate</div>
+    <p class="pillar-text">We host structured debate sessions that challenge students to defend positions with evidence and logic — building the intellectual confidence to engage on complex topics.</p>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">◉</div>
+    <div class="pillar-title">Open Knowledge</div>
+    <p class="pillar-text">All our published content is freely accessible. We believe quality research and analysis shouldn't be locked behind paywalls — especially for students and communities with limited access.</p>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="benefits-section">
+  <div class="section-label">Why Join</div>
+  <div class="section-heading">What You Gain</div>
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-num">01</div>
+      <div class="benefit-title">Published Work</div>
+      <p class="benefit-text">Get your research and writing published on a real platform — building your academic profile and portfolio from your undergraduate years.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">02</div>
+      <div class="benefit-title">Research Skills</div>
+      <p class="benefit-text">Learn how to structure arguments, cite sources, and conduct original research under the guidance of experienced editors and mentors.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">03</div>
+      <div class="benefit-title">Debate Training</div>
+      <p class="benefit-text">Develop confidence in defending positions and engaging with opposing views — a skill that extends far beyond academia into every profession.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-num">04</div>
+      <div class="benefit-title">A Community</div>
+      <p class="benefit-text">Connect with a network of students and researchers who share your intellectual curiosity and drive to understand the world more deeply.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-text">
+    <h3>Ready to contribute?</h3>
+    <p>Read our work, submit your own, or reach out to join the team.</p>
+  </div>
+  <div class="cta-btns">
+    <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/research">Read Our Research</a>
+    <a class="btn-outline" href="https://sites.google.com/view/research-and-debate-society/contact-us">Get in Touch</a>
+  </div>
+</div>
+
+</body>
+</html>

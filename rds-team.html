@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Team — Research & Debate Society ICUP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d1b2a;
+    --gold: #c5973a;
+    --gold-light: #e8c06a;
+    --cream: #f5f0e8;
+    --cream-dim: #d9d0be;
+    --text-dim: #9a9285;
+    --border: rgba(197,151,58,0.2);
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .page-header {
+    padding: 64px 48px 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 48px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 520px;
+    line-height: 1.8;
+  }
+
+  /* TEAM GRID */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: none;
+  }
+
+  .member {
+    padding: 48px 40px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.25s;
+  }
+
+  .member:hover { background: rgba(197,151,58,0.04); }
+
+  /* Last row: no bottom border for last 2 */
+  .member:nth-last-child(-n+2) { border-bottom: none; }
+
+  /* Remove right border for every 3rd item */
+  .member:nth-child(3n) { border-right: none; }
+
+  .member-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(197,151,58,0.12);
+    border: 1px solid rgba(197,151,58,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .member-role {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .member-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .member-dept {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .member-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 16px;
+  }
+
+  .member-detail {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+
+  /* BOTTOM CTA */
+  .join-band {
+    padding: 56px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .join-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .join-text p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  .btn-gold {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 40px 24px 32px; }
+    h1 { font-size: 32px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .member { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 32px 24px; }
+    .member:last-child { border-bottom: none !important; }
+    .join-band { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">The People Behind the Work</div>
+  <h1>Core Team</h1>
+  <p class="subtitle">Meet the students and researchers driving the Research &amp; Debate Society at Islamia College University Peshawar.</p>
+</div>
+
+<div class="team-grid">
+
+  <div class="member">
+    <div class="member-avatar">AR</div>
+    <div class="member-role">Founder &amp; President</div>
+    <div class="member-name">Abdul Rehman</div>
+    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
+    <div class="member-divider"></div>
+    <div class="member-detail">3rd Year Undergraduate</div>
+  </div>
+
+  <div class="member">
+    <div class="member-avatar">BR</div>
+    <div class="member-role">Co-Founder &amp; Editor</div>
+    <div class="member-name">Bilal Rehman</div>
+    <div class="member-dept">Research Assistant — I<br>CECOS-RMI Precision Medicine Lab, Peshawar</div>
+    <div class="member-divider"></div>
+    <div class="member-detail">Research &amp; Editorial Lead</div>
+  </div>
+
+  <div class="member">
+    <div class="member-avatar">SN</div>
+    <div class="member-role">Vice President</div>
+    <div class="member-name">Shehzad Nazeer</div>
+    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
+    <div class="member-divider"></div>
+    <div class="member-detail">3rd Year Undergraduate</div>
+  </div>
+
+  <div class="member">
+    <div class="member-avatar">MR</div>
+    <div class="member-role">General Secretary</div>
+    <div class="member-name">Mohammad Riaz</div>
+    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
+    <div class="member-divider"></div>
+    <div class="member-detail">3rd Year Undergraduate</div>
+  </div>
+
+  <div class="member">
+    <div class="member-avatar">SA</div>
+    <div class="member-role">Chief Organiser</div>
+    <div class="member-name">Syed-ul-Abrar</div>
+    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
+    <div class="member-divider"></div>
+    <div class="member-detail">3rd Year Undergraduate</div>
+  </div>
+
+</div>
+
+<div class="join-band">
+  <div class="join-text">
+    <h3>Want to contribute?</h3>
+    <p>Submit an article, opinion piece, or research paper to be published on our platform.</p>
+  </div>
+  <a class="btn-gold" href="mailto:researchdebatesociety@gmail.com">Submit Your Work</a>
+</div>
+
+</body>
+</html>

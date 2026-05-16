@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Articles — Research & Debate Society ICUP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0d1b2a;
+    --gold: #c5973a;
+    --gold-light: #e8c06a;
+    --cream: #f5f0e8;
+    --cream-dim: #d9d0be;
+    --text-dim: #9a9285;
+    --border: rgba(197,151,58,0.2);
+  }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
+  .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
+  .subtitle { font-size: 15px; color: var(--text-dim); max-width: 560px; line-height: 1.8; }
+
+  .category-nav { display: flex; border-bottom: 1px solid var(--border); padding: 0 48px; overflow-x: auto; }
+  .cat-link { display: inline-block; padding: 18px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+  .cat-link:hover { color: var(--cream-dim); }
+  .cat-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+  .empty-state { padding: 96px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 1px solid var(--border); }
+  .empty-icon { font-size: 48px; color: rgba(197,151,58,0.2); margin-bottom: 32px; font-family: 'Playfair Display', serif; }
+  .empty-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--cream); margin-bottom: 12px; }
+  .empty-sub { font-size: 15px; color: var(--text-dim); max-width: 460px; line-height: 1.8; margin-bottom: 40px; }
+  .btn-gold { display: inline-block; padding: 13px 32px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  .explainer { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--border); }
+  .exp-block { padding: 48px 40px; border-right: 1px solid var(--border); }
+  .exp-block:last-child { border-right: none; }
+  .exp-num { font-family: 'Playfair Display', serif; font-size: 36px; color: rgba(197,151,58,0.15); margin-bottom: 16px; }
+  .exp-title { font-size: 16px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
+  .exp-text { font-size: 13px; color: var(--text-dim); line-height: 1.85; }
+
+  .submit-band { padding: 56px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .submit-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 6px; }
+  .submit-text p { font-size: 14px; color: var(--text-dim); }
+
+  @media (max-width: 768px) {
+    .page-header, .submit-band { padding: 40px 24px; }
+    h1 { font-size: 32px; }
+    .category-nav { padding: 0 24px; }
+    .empty-state { padding: 64px 24px; }
+    .explainer { grid-template-columns: 1fr; }
+    .exp-block { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
+    .exp-block:last-child { border-bottom: none; }
+    .submit-band { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">Research &amp; Debate Society — ICUP</div>
+  <h1>Research Articles</h1>
+  <p class="subtitle">Original academic research with primary data, structured methodology, and formal findings — the most rigorous category of work we publish.</p>
+</div>
+
+<div class="category-nav">
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/articles">Articles</a>
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/opinion-articles">Opinion Articles</a>
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/review-articles">Review Articles</a>
+  <a class="cat-link active" href="#">Research Articles</a>
+</div>
+
+<div class="empty-state">
+  <div class="empty-icon">◉</div>
+  <div class="empty-title">No Research Articles Yet</div>
+  <p class="empty-sub">This section is reserved for original academic research. If you have conducted primary research — surveys, field work, data analysis, experiments — we'd love to help you publish your findings.</p>
+  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Submit Your Research</a>
+</div>
+
+<div class="explainer">
+  <div class="exp-block">
+    <div class="exp-num">01</div>
+    <div class="exp-title">What is a Research Article?</div>
+    <p class="exp-text">A research article presents original findings from primary research — including surveys, interviews, experiments, archival work, or quantitative data analysis. It follows a structured format: introduction, methodology, findings, discussion, and conclusion.</p>
+  </div>
+  <div class="exp-block">
+    <div class="exp-num">02</div>
+    <div class="exp-title">What We're Looking For</div>
+    <p class="exp-text">We welcome undergraduate and postgraduate research in any field — political science, history, economics, social sciences, natural sciences. Your methodology must be clearly described and your claims proportionate to your evidence.</p>
+  </div>
+  <div class="exp-block">
+    <div class="exp-num">03</div>
+    <div class="exp-title">Our Review Process</div>
+    <p class="exp-text">Research articles go through an editorial review by our team before publication. We may request revisions for clarity, citation completeness, or methodological transparency. We aim to respond to all submissions within 7–10 days.</p>
+  </div>
+</div>
+
+<div class="submit-band">
+  <div class="submit-text">
+    <h3>Publish your research with us.</h3>
+    <p>Original research deserves an audience. We'll help you reach one.</p>
+  </div>
+  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Submit Your Research</a>
+</div>
+
+</body>
+</html>
