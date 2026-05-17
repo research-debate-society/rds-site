@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base target="_top">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Review Articles — Research & Debate Society ICUP</title>
@@ -8,15 +9,12 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --navy: #0d1b2a;
-    --gold: #c5973a;
-    --gold-light: #e8c06a;
-    --cream: #f5f0e8;
-    --cream-dim: #d9d0be;
-    --text-dim: #9a9285;
+    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
+    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
     --border: rgba(197,151,58,0.2);
   }
   body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
 
   .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
   .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
@@ -25,20 +23,18 @@
   .subtitle { font-size: 15px; color: var(--text-dim); max-width: 560px; line-height: 1.8; }
 
   .category-nav { display: flex; border-bottom: 1px solid var(--border); padding: 0 48px; overflow-x: auto; }
-  .cat-link { display: inline-block; padding: 18px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+  .cat-link { display: inline-block; padding: 18px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
   .cat-link:hover { color: var(--cream-dim); }
   .cat-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
 
-  /* EMPTY STATE */
   .empty-state { padding: 96px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 1px solid var(--border); }
   .empty-icon { font-size: 48px; color: rgba(197,151,58,0.2); margin-bottom: 32px; font-family: 'Playfair Display', serif; }
   .empty-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--cream); margin-bottom: 12px; }
   .empty-sub { font-size: 15px; color: var(--text-dim); max-width: 460px; line-height: 1.8; margin-bottom: 40px; }
-  .btn-gold { display: inline-block; padding: 13px 32px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .btn-gold { display: inline-block; padding: 13px 32px; background: var(--gold); color: var(--navy); font-weight: 500; font-size: 14px; transition: background 0.2s; }
   .btn-gold:hover { background: var(--gold-light); }
 
-  /* WHAT IS A REVIEW ARTICLE */
-  .explainer { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--border); }
+  .explainer { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
   .exp-block { padding: 48px 40px; border-right: 1px solid var(--border); }
   .exp-block:last-child { border-right: none; }
   .exp-num { font-family: 'Playfair Display', serif; font-size: 36px; color: rgba(197,151,58,0.15); margin-bottom: 16px; }
@@ -70,10 +66,10 @@
 </div>
 
 <div class="category-nav">
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/articles">Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/opinion-articles">Opinion Articles</a>
-  <a class="cat-link active" href="#">Review Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research/research-articles">Research Articles</a>
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/articles">Articles</a>
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/opinion-articles">Opinion Articles</a>
+  <a class="cat-link active" href="https://sites.google.com/view/research-and-debate-society/review-articles">Review Articles</a>
+  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research-articles">Research Articles</a>
 </div>
 
 <div class="empty-state">
@@ -97,14 +93,14 @@
   <div class="exp-block">
     <div class="exp-num">03</div>
     <div class="exp-title">Submission Guidelines</div>
-    <p class="exp-text">Reviews should typically be 1,500–4,000 words. Please include a list of works reviewed or cited. All fields — history, politics, science, literature, economics — are welcome. Submit via the contact page.</p>
+    <p class="exp-text">Reviews should be 1,500–4,000 words. Include a list of works reviewed or cited. All fields — history, politics, science, literature, economics — are welcome. Submit via the contact page.</p>
   </div>
 </div>
 
 <div class="submit-band">
   <div class="submit-text">
     <h3>Be the first to publish here.</h3>
-    <p>Review articles are one of the most valuable contributions to academic discourse. Submit yours.</p>
+    <p>Review articles are one of the most valuable contributions to academic discourse.</p>
   </div>
   <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Get in Touch</a>
 </div>
