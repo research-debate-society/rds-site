@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base target="_top">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Research & Debate Society ICUP</title>
@@ -8,16 +9,12 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --navy: #0d1b2a;
-    --gold: #c5973a;
-    --gold-light: #e8c06a;
-    --cream: #f5f0e8;
-    --cream-dim: #d9d0be;
-    --text-dim: #9a9285;
-    --border: rgba(197,151,58,0.2);
-    --input-bg: rgba(255,255,255,0.04);
+    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
+    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
+    --border: rgba(197,151,58,0.2); --input-bg: rgba(255,255,255,0.04);
   }
-  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
 
   .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
   .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
@@ -25,22 +22,20 @@
   h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 600; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
   .subtitle { font-size: 15px; color: var(--text-dim); max-width: 520px; line-height: 1.8; }
 
-  /* TWO-COLUMN LAYOUT */
   .contact-body { display: grid; grid-template-columns: 1fr 1fr; }
 
-  /* LEFT: WAYS TO REACH US */
+  /* LEFT: info */
   .contact-info { padding: 56px 48px; border-right: 1px solid var(--border); }
   .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 32px; font-weight: 600; }
 
-  .contact-card { padding: 24px 0; border-bottom: 1px solid var(--border); }
-  .contact-card:last-child { border-bottom: none; }
-  .contact-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-  .contact-name { font-size: 16px; color: var(--cream); margin-bottom: 4px; font-weight: 400; }
-  .contact-role { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
-  .contact-email { display: inline-block; font-size: 13px; color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(197,151,58,0.3); padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
-  .contact-email:hover { color: var(--gold); border-color: var(--gold); }
+  .info-block { padding: 24px 0; border-bottom: 1px solid var(--border); }
+  .info-block:last-child { border-bottom: none; }
+  .info-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .info-text { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
+  .info-email { display: inline-block; font-size: 14px; color: var(--gold-light); border-bottom: 1px solid rgba(197,151,58,0.3); padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
+  .info-email:hover { color: var(--gold); border-color: var(--gold); }
 
-  /* RIGHT: SUBMIT FORM */
+  /* RIGHT: form */
   .contact-form { padding: 56px 48px; }
   .contact-form h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 8px; font-weight: 600; }
   .form-sub { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; line-height: 1.7; }
@@ -48,29 +43,32 @@
   .form-group { margin-bottom: 20px; }
   .form-label { display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
   .form-input, .form-select, .form-textarea {
-    width: 100%;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 12px 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    appearance: none;
-    -webkit-appearance: none;
+    width: 100%; background: var(--input-bg); border: 1px solid var(--border);
+    color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px;
+    font-weight: 300; padding: 12px 16px; outline: none; transition: border-color 0.2s;
+    -webkit-appearance: none; appearance: none;
   }
   .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
   .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
   .form-textarea { resize: vertical; min-height: 120px; }
-  .form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5973a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  .form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5973a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+  }
   .form-select option { background: #162233; color: var(--cream); }
 
   .btn-submit { display: block; width: 100%; padding: 14px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: 0.5px; border: none; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
   .btn-submit:hover { background: var(--gold-light); }
 
+  /* Feedback states */
   .form-note { font-size: 12px; color: var(--text-dim); margin-top: 12px; line-height: 1.6; }
+  .form-note a { color: var(--gold-light); border-bottom: 1px solid rgba(197,151,58,0.3); }
+  .form-note a:hover { color: var(--gold); }
+
+  #form-success { display: none; padding: 20px; background: rgba(197,151,58,0.1); border: 1px solid var(--border); margin-top: 16px; }
+  #form-success p { font-size: 14px; color: var(--cream-dim); line-height: 1.7; }
+  #form-success strong { color: var(--gold-light); }
 
   @media (max-width: 768px) {
     .page-header { padding: 40px 24px 32px; }
@@ -91,88 +89,135 @@
 
 <div class="contact-body">
 
-  <!-- LEFT -->
+  <!-- LEFT: contact info -->
   <div class="contact-info">
-    <h2>Reach the Team</h2>
+    <h2>Reach the Society</h2>
 
-    <div class="contact-card">
-      <div class="contact-label">General Inquiries &amp; Submissions</div>
-      <div class="contact-name">Research &amp; Debate Society</div>
-      <div class="contact-role">Official Society Email</div>
-      <a class="contact-email" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
+    <div class="info-block">
+      <div class="info-label">General Inquiries &amp; Submissions</div>
+      <p class="info-text">For all correspondence — article submissions, membership queries, collaborations, or feedback — use the society's official email.</p>
+      <a class="info-email" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
     </div>
 
-    <div class="contact-card">
-      <div class="contact-label">President</div>
-      <div class="contact-name">Abdul Rehman</div>
-      <div class="contact-role">Founder &amp; President</div>
-      <a class="contact-email" href="mailto:abdulrehman132006@gmail.com">abdulrehman132006@gmail.com</a>
+    <div class="info-block">
+      <div class="info-label">Abdul Rehman — Founder &amp; President</div>
+      <a class="info-email" href="mailto:abdulrehmanpol.science@gmail.com">abdulrehmanpol.science@gmail.com</a>
     </div>
 
-    <div class="contact-card">
-      <div class="contact-label">Editor</div>
-      <div class="contact-name">Bilal Rehman</div>
-      <div class="contact-role">Co-Founder &amp; Editor</div>
-      <a class="contact-email" href="mailto:bilalrehman3216@gmail.com">bilalrehman3216@gmail.com</a>
+    <div class="info-block">
+      <div class="info-label">Bilal Rehman — Co-Founder &amp; Editor</div>
+      <a class="info-email" href="mailto:bilal.cobam@gmail.com">bilal.cobam@gmail.com</a>
     </div>
 
-    <div class="contact-card">
-      <div class="contact-label">Vice President</div>
-      <div class="contact-name">Shehzad Nazeer</div>
-      <div class="contact-role">Vice President</div>
-      <a class="contact-email" href="mailto:shehzadnazeer142@gmail.com">shehzadnazeer142@gmail.com</a>
+    <div class="info-block">
+      <div class="info-label">Shehzad Nazeer — Vice President</div>
+      <a class="info-email" href="mailto:shehzadnazeer101@gmail.com">shehzadnazeer101@gmail.com</a>
     </div>
 
-    <div class="contact-card">
-      <div class="contact-label">General Secretary</div>
-      <div class="contact-name">Mohammad Riaz</div>
-      <div class="contact-role">General Secretary</div>
-      <a class="contact-email" href="mailto:mohammadriaz5025@gmail.com">mohammadriaz5025@gmail.com</a>
+    <div class="info-block">
+      <div class="info-label">Muhammad Riaz — General Secretary</div>
+      <a class="info-email" href="mailto:riazshahbkhel01@gmail.com">riazshahbkhel01@gmail.com</a>
+    </div>
+
+    <div class="info-block">
+      <div class="info-label">Based At</div>
+      <p class="info-text">Department of Political Science<br>Islamia College University Peshawar<br>Khyber Pakhtunkhwa, Pakistan</p>
     </div>
   </div>
 
-  <!-- RIGHT: FORM -->
+  <!-- RIGHT: submission form -->
   <div class="contact-form">
     <h2>Submit Your Work</h2>
-    <p class="form-sub">Send us your article, opinion piece, or research paper for consideration. We review all submissions and get back within 5–7 days.</p>
+    <p class="form-sub">Fill out the form below and click Send. Your default mail app will open with everything pre-filled — just attach your manuscript and hit send.</p>
 
     <div class="form-group">
-      <label class="form-label">Your Name</label>
-      <input class="form-input" type="text" placeholder="Full name">
+      <label class="form-label" for="f-name">Your Full Name</label>
+      <input class="form-input" id="f-name" type="text" placeholder="e.g. Ahmed Khan" required>
     </div>
 
     <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input class="form-input" type="email" placeholder="your@email.com">
+      <label class="form-label" for="f-email">Your Email Address</label>
+      <input class="form-input" id="f-email" type="email" placeholder="your@email.com">
     </div>
 
     <div class="form-group">
-      <label class="form-label">Submission Type</label>
-      <select class="form-select">
+      <label class="form-label" for="f-type">Submission Type</label>
+      <select class="form-select" id="f-type">
         <option value="" disabled selected>Select a category</option>
-        <option>Article</option>
-        <option>Opinion Article</option>
-        <option>Review Article</option>
-        <option>Research Article</option>
-        <option>General Inquiry</option>
+        <option value="Article">Article</option>
+        <option value="Opinion Article">Opinion Article</option>
+        <option value="Review Article">Review Article</option>
+        <option value="Research Article">Research Article</option>
+        <option value="General Inquiry">General Inquiry</option>
+        <option value="Membership">Membership / Join the Team</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label class="form-label">Title of Your Work</label>
-      <input class="form-input" type="text" placeholder="Working title">
+      <label class="form-label" for="f-title">Title of Your Work</label>
+      <input class="form-input" id="f-title" type="text" placeholder="Working title of your submission">
     </div>
 
     <div class="form-group">
-      <label class="form-label">Abstract / Summary</label>
-      <textarea class="form-textarea" placeholder="Briefly describe your work and its main argument (200–300 words)..."></textarea>
+      <label class="form-label" for="f-abstract">Abstract / Message</label>
+      <textarea class="form-textarea" id="f-abstract" placeholder="Briefly describe your work, its main argument, and any relevant background (200–300 words for submissions, or write your query here for general inquiries)..."></textarea>
     </div>
 
-    <button class="btn-submit" onclick="alert('Please send your full manuscript to researchdebatesociety@gmail.com — we look forward to reading your work!')">Send Submission →</button>
-    <p class="form-note">For full manuscripts, please email your document directly to <a href="mailto:researchdebatesociety@gmail.com" style="color: var(--gold-light); text-decoration: none;">researchdebatesociety@gmail.com</a> after submitting this form.</p>
+    <button class="btn-submit" onclick="sendViaMailto()">Send to Research &amp; Debate Society →</button>
+
+    <div id="form-success">
+      <p>✦ Your mail app should have opened with your submission pre-filled. Please <strong>attach your full manuscript</strong> if applicable, then hit send. If your mail app didn't open, email us directly at <a href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>.</p>
+    </div>
+
+    <p class="form-note">
+      This form opens your default mail app (Gmail, Outlook, Apple Mail, etc.) with all fields pre-filled.
+      You can also email us directly at <a href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>.
+    </p>
   </div>
 
 </div>
+
+<script>
+function sendViaMailto() {
+  var name     = document.getElementById('f-name').value.trim();
+  var email    = document.getElementById('f-email').value.trim();
+  var type     = document.getElementById('f-type').value;
+  var title    = document.getElementById('f-title').value.trim();
+  var abstract = document.getElementById('f-abstract').value.trim();
+
+  // Validate minimum fields
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!type) { alert('Please select a submission type.'); return; }
+
+  var subjectLine = '[' + (type || 'Inquiry') + '] ' + (title || 'Submission') + ' — ' + name;
+
+  var body = '';
+  body += 'Name: ' + name + '\n';
+  if (email) body += 'Reply-to: ' + email + '\n';
+  body += 'Submission Type: ' + type + '\n';
+  if (title) body += 'Title: ' + title + '\n';
+  body += '\n';
+  if (abstract) body += 'Abstract / Message:\n' + abstract + '\n\n';
+  body += '---\n';
+  body += 'Please attach the full manuscript to this email if applicable.\n';
+  body += 'Sent via the Research & Debate Society contact form.';
+
+  var mailto = 'mailto:researchdebatesociety@gmail.com'
+             + '?subject=' + encodeURIComponent(subjectLine)
+             + '&body='    + encodeURIComponent(body);
+
+  // Use a hidden anchor so it works reliably inside iframes
+  var anchor = document.createElement('a');
+  anchor.href = mailto;
+  anchor.target = '_blank'; // open in new context so iframe doesn't interfere
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+
+  // Show success banner
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
