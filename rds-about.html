@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base target="_top">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Research & Debate Society ICUP</title>
@@ -8,44 +9,36 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --navy: #0d1b2a;
-    --gold: #c5973a;
-    --gold-light: #e8c06a;
-    --cream: #f5f0e8;
-    --cream-dim: #d9d0be;
-    --text-dim: #9a9285;
+    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
+    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
     --border: rgba(197,151,58,0.2);
   }
   body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
 
-  /* HEADER */
   .page-header { padding: 64px 48px 56px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
   .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
   .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
   h1 { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--cream); line-height: 1.05; }
-  .header-right { padding-bottom: 8px; }
-  .header-right p { font-size: 16px; color: var(--text-dim); line-height: 1.9; }
+  .header-right p { font-size: 16px; color: var(--text-dim); line-height: 1.9; padding-bottom: 8px; }
 
-  /* MISSION STATEMENT */
   .mission { padding: 72px 48px; border-bottom: 1px solid var(--border); text-align: center; }
   .mission-quote { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 40px); font-style: italic; color: var(--gold-light); line-height: 1.5; max-width: 700px; margin: 0 auto 20px; }
   .mission-attr { font-size: 13px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
 
-  /* WHAT WE DO */
   .what-header { padding: 48px 48px 0; }
   .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .section-heading { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; color: var(--cream); margin-bottom: 0; }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; color: var(--cream); }
 
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 0; border-top: 1px solid var(--border); margin-top: 32px; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 32px; border-top: 1px solid var(--border); }
   .pillar { padding: 48px 40px; border-right: 1px solid var(--border); }
   .pillar:last-child { border-right: none; }
   .pillar-icon { font-size: 28px; color: var(--gold); margin-bottom: 20px; }
   .pillar-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--cream); margin-bottom: 12px; }
   .pillar-text { font-size: 14px; color: var(--text-dim); line-height: 1.85; }
 
-  /* BENEFITS */
   .benefits-section { border-top: 1px solid var(--border); padding: 56px 48px; }
-  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--border); }
+  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 32px; border: 1px solid var(--border); }
   .benefit { padding: 32px 36px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .benefit:nth-child(2n) { border-right: none; }
   .benefit:nth-last-child(-n+2) { border-bottom: none; }
@@ -53,14 +46,13 @@
   .benefit-title { font-size: 15px; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
   .benefit-text { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
 
-  /* CTA */
   .cta-band { padding: 56px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
   .cta-text h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--cream); margin-bottom: 8px; }
   .cta-text p { font-size: 14px; color: var(--text-dim); }
   .cta-btns { display: flex; gap: 16px; }
-  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: background 0.2s; }
+  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: var(--navy); font-weight: 500; font-size: 14px; transition: background 0.2s; }
   .btn-gold:hover { background: var(--gold-light); }
-  .btn-outline { display: inline-block; padding: 13px 28px; background: transparent; color: var(--cream-dim); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 14px; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
+  .btn-outline { display: inline-block; padding: 13px 28px; background: transparent; color: var(--cream-dim); font-size: 14px; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
 
   @media (max-width: 768px) {
@@ -77,13 +69,11 @@
     .benefit:last-child { border-bottom: none !important; }
     .cta-band { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
     .cta-btns { flex-direction: column; width: 100%; }
-    .btn-gold, .btn-outline { text-align: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="page-header">
   <div>
     <div class="eyebrow">Who We Are</div>
@@ -94,13 +84,11 @@
   </div>
 </div>
 
-<!-- MISSION -->
 <div class="mission">
   <div class="mission-quote">"Knowledge as a Human Right"</div>
   <div class="mission-attr">Our founding principle</div>
 </div>
 
-<!-- WHAT WE DO -->
 <div class="what-header">
   <div class="section-label">Our Purpose</div>
   <div class="section-heading">What We Stand For</div>
@@ -123,7 +111,6 @@
   </div>
 </div>
 
-<!-- BENEFITS -->
 <div class="benefits-section">
   <div class="section-label">Why Join</div>
   <div class="section-heading">What You Gain</div>
@@ -151,14 +138,13 @@
   </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-band">
   <div class="cta-text">
     <h3>Ready to contribute?</h3>
     <p>Read our work, submit your own, or reach out to join the team.</p>
   </div>
   <div class="cta-btns">
-    <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/research">Read Our Research</a>
+    <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/articles">Read Our Research</a>
     <a class="btn-outline" href="https://sites.google.com/view/research-and-debate-society/contact-us">Get in Touch</a>
   </div>
 </div>
