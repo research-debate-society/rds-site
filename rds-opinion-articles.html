@@ -1,178 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base target="_top">
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="rds-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opinion Articles — Research & Debate Society ICUP</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
-    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
-    --border: rgba(197,151,58,0.2);
-  }
-  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
-  a { text-decoration: none; color: inherit; }
-
-  .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
-  .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
-  h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
-  .subtitle { font-size: 15px; color: var(--text-dim); max-width: 560px; line-height: 1.8; }
-
-  .category-nav { display: flex; border-bottom: 1px solid var(--border); padding: 0 48px; overflow-x: auto; }
-  .cat-link { display: inline-block; padding: 18px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
-  .cat-link:hover { color: var(--cream-dim); }
-  .cat-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
-
-  .articles { padding: 0 48px; }
-  .article-row { display: grid; grid-template-columns: 80px 1fr 220px; border-bottom: 1px solid var(--border); padding: 48px 0; align-items: start; }
-  .article-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: rgba(197,151,58,0.15); line-height: 1; padding-top: 4px; }
-  .article-body { padding-right: 32px; }
-  .article-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .article-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--cream); line-height: 1.3; margin-bottom: 14px; cursor: pointer; transition: color 0.2s; }
-  .article-title:hover { color: var(--gold-light); }
-  .article-abstract { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 20px; }
-  .article-keywords { display: flex; flex-wrap: wrap; gap: 8px; }
-  .kw { font-size: 11px; letter-spacing: 1px; color: var(--text-dim); border: 1px solid var(--border); padding: 4px 10px; }
-
-  .article-meta { padding-top: 4px; }
-  .meta-author { font-size: 14px; color: var(--cream-dim); font-weight: 400; margin-bottom: 6px; }
-  .meta-detail { font-size: 12px; color: var(--text-dim); line-height: 1.7; }
-  .meta-divider { width: 24px; height: 1px; background: var(--border); margin: 12px 0; }
-  .toggle-btn { display: inline-block; font-size: 12px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: color 0.2s; border: none; background: none; font-family: inherit; padding: 0; }
-  .toggle-btn:hover { color: var(--gold-light); }
-
-  .article-expanded { display: none; grid-column: 1 / -1; padding: 32px 80px 0; border-top: 1px solid var(--border); margin-top: 32px; }
-  .article-expanded.open { display: block; }
-  .article-expanded h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--cream); margin: 28px 0 10px; font-weight: 600; }
-  .article-expanded h3:first-child { margin-top: 0; }
-  .article-expanded p { font-size: 14px; color: var(--text-dim); line-height: 1.95; margin-bottom: 16px; }
-  .article-expanded blockquote { border-left: 2px solid var(--gold); padding-left: 20px; margin: 24px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--cream-dim); line-height: 1.7; }
-
-  .submit-band { padding: 56px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-  .submit-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 6px; }
-  .submit-text p { font-size: 14px; color: var(--text-dim); }
-  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: var(--navy); font-weight: 500; font-size: 14px; transition: background 0.2s; }
-  .btn-gold:hover { background: var(--gold-light); }
-
-  @media (max-width: 768px) {
-    .page-header, .submit-band { padding: 40px 24px; }
-    h1 { font-size: 32px; }
-    .category-nav { padding: 0 24px; }
-    .articles { padding: 0 24px; }
-    .article-row { grid-template-columns: 1fr; padding: 32px 0; }
-    .article-num { font-size: 28px; margin-bottom: 8px; }
-    .article-body { padding-right: 0; margin-bottom: 24px; }
-    .article-expanded { padding: 24px 0 0; }
-    .submit-band { flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<title>Opinion Articles — Research &amp; Debate Society</title>
+<meta name="description" content="Opinion articles and commentary from the Research &amp; Debate Society — covering governance, social critique, and Pakistani political affairs.">
+<link rel="canonical" href="https://research-debate-society.github.io/rds-official/rds-opinion-articles.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rds-styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XSXDY2PG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3XSXDY2PG7');
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Opinion Articles — Research & Debate Society">
+  <meta property="og:description" content="Opinion and commentary from student writers on governance, social critique, and Pakistani political affairs.">
+  <meta property="og:url" content="https://research-debate-society.github.io/rds-official/rds-opinion-articles.html">
+  <meta property="og:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
+  <meta property="og:site_name" content="Research & Debate Society">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Opinion Articles — Research & Debate Society">
+  <meta name="twitter:description" content="Opinion and commentary from student writers on governance, social critique, and Pakistani political affairs.">
+  <meta name="twitter:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
 </head>
 <body>
 
-<div class="page-header">
-  <div class="eyebrow">Research &amp; Debate Society — ICUP</div>
+<nav class="site-nav">
+  <a class="nav-brand" href="index.html">RDS</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rds-articles.html">Articles</a>
+    <a href="rds-opinion-articles.html" class="active">Opinion</a>
+    <a href="rds-research-articles.html">Research</a>
+    <a href="rds-review-articles.html">Reviews</a>
+    <a href="rds-team.html">Team</a>
+    <a href="rds-about.html">About</a>
+    <a href="rds-contact.html">Contact</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Research &amp; Debate Society</div>
   <h1>Opinion Articles</h1>
-  <p class="subtitle">Analysis, commentary, and argument on political, social, and intellectual questions. These pieces represent the authors' own views and are intended to provoke thought and debate.</p>
+  <p>Analysis, commentary, and argument on the political and social questions of our time — written by students engaging seriously with difficult issues.</p>
 </div>
 
-<div class="category-nav">
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/articles">Articles</a>
-  <a class="cat-link active" href="https://sites.google.com/view/research-and-debate-society/opinion-articles">Opinion Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/review-articles">Review Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research-articles">Research Articles</a>
+<div class="articles-grid">
+
+  <a class="article-card" href="opinion/performative-spectacles.html">
+    <div class="card-tag">Opinion</div>
+    <span class="card-title">A Climate of Performative Spectacles</span>
+    <p class="card-excerpt">Drawing on Herbert Marcuse's critique of one-dimensional society, this essay examines how social media has replaced authentic engagement with performative display — and what that means for political culture, mental health, and our collective search for meaning.</p>
+    <div class="card-meta">
+      <span class="author">Abdullah Bin Khalid</span><span class="dot"></span>
+      <span>11 December 2025</span>
+    </div>
+    <div class="card-arrow">Read Article →</div>
+  </a>
+
+  <a class="article-card" href="opinion/district-kurram-fata.html">
+    <div class="card-tag">Opinion</div>
+    <span class="card-title">Understanding the Dilemma of District Kurram: Extension of a New Social Contract Without Mainstreaming FATA</span>
+    <p class="card-excerpt">An on-the-ground account of the 2024 to 2025 Kurram conflict, tracing its roots from colonial-era land disputes and the Frontier Crimes Regulation to the broken promises of the 25th Constitutional Amendment.</p>
+    <div class="card-meta">
+      <span class="author">Abdul Rehman</span><span class="dot"></span>
+      <span>14 July 2025</span>
+    </div>
+    <div class="card-arrow">Read Article →</div>
+  </a>
+
 </div>
 
-<div class="articles">
-
-  <!-- OPINION 1 -->
-  <div class="article-row">
-    <div class="article-num">01</div>
-    <div class="article-body">
-      <div class="article-tag">Opinion · Political Theory</div>
-      <div class="article-title" onclick="toggleArticle('o1', this)">A Climate of Performative Spectacles: Why Political Theatre Has Replaced Genuine Governance</div>
-      <p class="article-abstract">As democratic politics increasingly becomes a performance optimised for media consumption rather than policy delivery, this piece argues that the gap between political spectacle and substantive governance has become one of the defining crises of contemporary democracy — and asks what responsibility citizens bear for demanding better.</p>
-      <div class="article-keywords">
-        <span class="kw">Political Theatre</span><span class="kw">Democratic Erosion</span>
-        <span class="kw">Media Politics</span><span class="kw">Populism</span><span class="kw">Governance</span>
-      </div>
-      <div class="article-expanded" id="o1">
-        <h3>The Performance Has Replaced the Policy</h3>
-        <p>We are living through an era in which the image of action has become more politically valuable than action itself. Governments announce programmes that are never implemented, hold summits that produce communiqués but not change, and stage confrontations designed for social media virality rather than policy impact.</p>
-        <blockquote>"Politics has always involved performance. What is new is when performance becomes the substance, not the packaging."</blockquote>
-        <h3>The Infrastructure of Spectacle</h3>
-        <p>Several structural forces have converged to create the current climate. The fragmentation of media has shortened the attention cycle to the point where governments are rewarded for generating news rather than making progress. Social media platforms algorithmically amplify outrage and conflict over measured deliberation. The result is a feedback loop: politicians perform because it works; it works because media amplifies it; media amplifies it because audiences engage; and audiences engage because they have been trained to expect drama, not deliberation.</p>
-        <h3>Pakistan as a Case Study</h3>
-        <p>Pakistan's recent political cycle offers an instructive, if painful, illustration. The years 2021–2024 saw extraordinary political theatre — mass rallies, dramatic resignations, constitutional crises, and sweeping counter-narratives — but very little policy substance. Economic management during this period was characterised more by blame-shifting than reform. What united all political actors was the prioritisation of optics over outcomes.</p>
-        <h3>The Citizen's Complicity</h3>
-        <p>It would be comfortable to attribute the climate of performative politics entirely to cynical elites. But this lets citizens off too easily. Audiences reward spectacle. They share clips of rhetorical victories rather than analyses of policy failures. Democratic politics, ultimately, produces the leaders that democratic publics are willing to accept.</p>
-        <h3>Conclusion</h3>
-        <p>The climate of performative spectacles is not inevitable. It is the product of specific structural choices — in media, in political incentives, in civic culture — that can be made differently. But changing them requires first seeing them clearly, and resisting the seduction of the performance.</p>
-      </div>
-    </div>
-    <div class="article-meta">
-      <div class="meta-author">Abdullah Bin Khalid</div>
-      <div class="meta-detail">Contributing Writer<br>Research &amp; Debate Society<br>December 2025</div>
-      <div class="meta-divider"></div>
-      <button class="toggle-btn" onclick="toggleArticle('o1', this)">Read Article →</button>
-    </div>
+<div class="footer-band">
+  <div>
+    <div class="footer-name">Research &amp; Debate Society</div>
+    <div class="footer-detail">Peshawar, Khyber Pakhtunkhwa</div>
   </div>
-
-  <!-- OPINION 2 -->
-  <div class="article-row">
-    <div class="article-num">02</div>
-    <div class="article-body">
-      <div class="article-tag">Opinion · Politics &amp; Governance</div>
-      <div class="article-title" onclick="toggleArticle('o2', this)">Understanding the Dilemma of District Kurram: Extension of a New Social Contract Without Mainstreaming FATA</div>
-      <p class="article-abstract">From the deadly sectarian conflict of 2024–2025 rooted in tribal land disputes, to the broader failure of the 25th Amendment's promise of mainstreaming, this piece traces the political and humanitarian unravelling of Kurram district — and argues that without a genuine new social contract, imposed peace will remain fragile and temporary.</p>
-      <div class="article-keywords">
-        <span class="kw">Kurram District</span><span class="kw">FATA Merger</span>
-        <span class="kw">25th Amendment</span><span class="kw">Tribal Governance</span><span class="kw">Sectarianism</span>
-      </div>
-      <div class="article-expanded" id="o2">
-        <h3>The Crisis of 2024–2025</h3>
-        <p>Between late 2024 and early 2025, District Kurram in Khyber Pakhtunkhwa became the site of some of Pakistan's most deadly inter-communal violence in years. Clashes rooted in longstanding tribal land disputes between Sunni and Shia communities left hundreds dead and tens of thousands displaced. The Pakistani state's response was characterised by delay, inadequacy, and an apparent inability to enforce basic security in its own territory.</p>
-        <h3>The Promise of the 25th Amendment</h3>
-        <p>The 25th Constitutional Amendment, passed in 2018, merged the Federally Administered Tribal Areas (FATA) with Khyber Pakhtunkhwa, formally extending the writ of the Pakistani state. The ambition was admirable. The implementation was catastrophic. The merger created a legal and administrative jurisdiction on paper without building the institutional infrastructure to make it real on the ground. Courts were declared competent before they had judges who understood tribal land tenure. Police were deployed before they had the local legitimacy or numerical strength to enforce order.</p>
-        <h3>Land, Identity, and the Roots of Conflict</h3>
-        <p>The specific conflict in Kurram is inseparable from disputes over agricultural land and grazing rights that have existed for generations. It would be a serious analytical error to reduce the conflict to sectarianism alone. The sectarian framing often serves the interests of those who wish to avoid accountability for the failure of land settlement and dispute resolution.</p>
-        <blockquote>"What is called a sectarian conflict is very often a resource conflict in sectarian clothing."</blockquote>
-        <h3>Toward a Genuine Social Contract</h3>
-        <p>What Kurram requires is not simply better security deployment or faster court construction. It requires a genuine renegotiation of the social contract between the Pakistani state and these communities: one that acknowledges the legitimacy of customary institutions where they function, builds formal state capacity alongside rather than instead of them, and creates genuine political representation.</p>
-        <h3>Conclusion</h3>
-        <p>The tragedy of Kurram is the consequence of a structural reform — the FATA merger — that was implemented without the seriousness of purpose it required. The promise of mainstreaming has not been kept. Until it is, the violence will recur, and the state's claim to sovereignty in its own territory will remain a legal fiction rather than a lived reality.</p>
-      </div>
-    </div>
-    <div class="article-meta">
-      <div class="meta-author">Abdul Rehman</div>
-      <div class="meta-detail">Founder &amp; President<br>Research &amp; Debate Society<br>July 2025</div>
-      <div class="meta-divider"></div>
-      <button class="toggle-btn" onclick="toggleArticle('o2', this)">Read Article →</button>
-    </div>
-  </div>
-
+  <a class="footer-contact" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
 </div>
 
-<div class="submit-band">
-  <div class="submit-text">
-    <h3>Have an opinion to share?</h3>
-    <p>We welcome well-argued, evidence-based opinion pieces on any subject of public interest.</p>
-  </div>
-  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Submit Your Opinion</a>
-</div>
-
-<script>
-function toggleArticle(id, btn) {
-  var el = document.getElementById(id);
-  var isOpen = el.classList.contains('open');
-  el.classList.toggle('open');
-  if (btn && btn.tagName === 'BUTTON') {
-    btn.textContent = isOpen ? 'Read Article →' : 'Collapse ↑';
-  }
-}
-</script>
 </body>
 </html>

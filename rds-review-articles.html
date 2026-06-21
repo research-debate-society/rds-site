@@ -1,108 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base target="_top">
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="rds-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Review Articles — Research & Debate Society ICUP</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
-    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
-    --border: rgba(197,151,58,0.2);
-  }
-  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
-  a { text-decoration: none; color: inherit; }
-
-  .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
-  .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
-  h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
-  .subtitle { font-size: 15px; color: var(--text-dim); max-width: 560px; line-height: 1.8; }
-
-  .category-nav { display: flex; border-bottom: 1px solid var(--border); padding: 0 48px; overflow-x: auto; }
-  .cat-link { display: inline-block; padding: 18px 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
-  .cat-link:hover { color: var(--cream-dim); }
-  .cat-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
-
-  .empty-state { padding: 96px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; border-bottom: 1px solid var(--border); }
-  .empty-icon { font-size: 48px; color: rgba(197,151,58,0.2); margin-bottom: 32px; font-family: 'Playfair Display', serif; }
-  .empty-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--cream); margin-bottom: 12px; }
-  .empty-sub { font-size: 15px; color: var(--text-dim); max-width: 460px; line-height: 1.8; margin-bottom: 40px; }
-  .btn-gold { display: inline-block; padding: 13px 32px; background: var(--gold); color: var(--navy); font-weight: 500; font-size: 14px; transition: background 0.2s; }
-  .btn-gold:hover { background: var(--gold-light); }
-
-  .explainer { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
-  .exp-block { padding: 48px 40px; border-right: 1px solid var(--border); }
-  .exp-block:last-child { border-right: none; }
-  .exp-num { font-family: 'Playfair Display', serif; font-size: 36px; color: rgba(197,151,58,0.15); margin-bottom: 16px; }
-  .exp-title { font-size: 16px; font-weight: 500; color: var(--cream); margin-bottom: 10px; }
-  .exp-text { font-size: 13px; color: var(--text-dim); line-height: 1.85; }
-
-  .submit-band { padding: 56px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-  .submit-text h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 6px; }
-  .submit-text p { font-size: 14px; color: var(--text-dim); }
-
-  @media (max-width: 768px) {
-    .page-header, .submit-band { padding: 40px 24px; }
-    h1 { font-size: 32px; }
-    .category-nav { padding: 0 24px; }
-    .empty-state { padding: 64px 24px; }
-    .explainer { grid-template-columns: 1fr; }
-    .exp-block { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
-    .exp-block:last-child { border-bottom: none; }
-    .submit-band { flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<title>Review Articles — Research &amp; Debate Society</title>
+<meta name="description" content="Critical literature reviews and review articles published by the Research &amp; Debate Society.">
+<link rel="canonical" href="https://research-debate-society.github.io/rds-official/rds-review-articles.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rds-styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XSXDY2PG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3XSXDY2PG7');
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Review Articles — Research & Debate Society">
+  <meta property="og:description" content="Critical literature reviews from the Research & Debate Society.">
+  <meta property="og:url" content="https://research-debate-society.github.io/rds-official/rds-review-articles.html">
+  <meta property="og:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
+  <meta property="og:site_name" content="Research & Debate Society">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Review Articles — Research & Debate Society">
+  <meta name="twitter:description" content="Critical literature reviews from the Research & Debate Society.">
+  <meta name="twitter:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
 </head>
 <body>
 
-<div class="page-header">
-  <div class="eyebrow">Research &amp; Debate Society — ICUP</div>
-  <h1>Review Articles</h1>
-  <p class="subtitle">Critical reviews of existing literature, books, and academic work — synthesising what is known, identifying gaps, and evaluating competing scholarly positions.</p>
-</div>
+<nav class="site-nav">
+  <a class="nav-brand" href="index.html">RDS</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rds-articles.html">Articles</a>
+    <a href="rds-opinion-articles.html">Opinion</a>
+    <a href="rds-research-articles.html">Research</a>
+    <a href="rds-review-articles.html" class="active">Reviews</a>
+    <a href="rds-team.html">Team</a>
+    <a href="rds-about.html">About</a>
+    <a href="rds-contact.html">Contact</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-<div class="category-nav">
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/articles">Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/opinion-articles">Opinion Articles</a>
-  <a class="cat-link active" href="https://sites.google.com/view/research-and-debate-society/review-articles">Review Articles</a>
-  <a class="cat-link" href="https://sites.google.com/view/research-and-debate-society/research-articles">Research Articles</a>
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Research &amp; Debate Society</div>
+  <h1>Review Articles</h1>
+  <p>Critical literature reviews synthesising existing research and offering structured analysis across the society's areas of scholarly interest.</p>
 </div>
 
 <div class="empty-state">
-  <div class="empty-icon">◇</div>
-  <div class="empty-title">No Review Articles Yet</div>
-  <p class="empty-sub">This section is open for submissions. If you have written a literature review or book review on any academic subject, we'd love to publish it here.</p>
-  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Submit a Review Article</a>
+  <p>Review articles are forthcoming. Check back soon, or explore our <a href="rds-articles.html" style="color:var(--gold)">Articles</a> and <a href="rds-research-articles.html" style="color:var(--gold)">Research</a> sections in the meantime.</p>
 </div>
 
-<div class="explainer">
-  <div class="exp-block">
-    <div class="exp-num">01</div>
-    <div class="exp-title">What is a Review Article?</div>
-    <p class="exp-text">A review article surveys and critically evaluates existing published work on a particular topic — identifying key debates, schools of thought, methodological strengths and weaknesses, and open questions the field has yet to resolve.</p>
+<div class="footer-band">
+  <div>
+    <div class="footer-name">Research &amp; Debate Society</div>
+    <div class="footer-detail">Peshawar, Khyber Pakhtunkhwa</div>
   </div>
-  <div class="exp-block">
-    <div class="exp-num">02</div>
-    <div class="exp-title">What We're Looking For</div>
-    <p class="exp-text">We welcome literature reviews, book reviews, and historiographical essays. Your review should have a clear argument about the state of knowledge on your topic — not just a summary of what others have said.</p>
-  </div>
-  <div class="exp-block">
-    <div class="exp-num">03</div>
-    <div class="exp-title">Submission Guidelines</div>
-    <p class="exp-text">Reviews should be 1,500–4,000 words. Include a list of works reviewed or cited. All fields — history, politics, science, literature, economics — are welcome. Submit via the contact page.</p>
-  </div>
-</div>
-
-<div class="submit-band">
-  <div class="submit-text">
-    <h3>Be the first to publish here.</h3>
-    <p>Review articles are one of the most valuable contributions to academic discourse.</p>
-  </div>
-  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Get in Touch</a>
+  <a class="footer-contact" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
 </div>
 
 </body>

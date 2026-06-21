@@ -1,112 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base target="_top">
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="rds-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Core Team — Research & Debate Society ICUP</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
-    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
-    --border: rgba(197,151,58,0.2);
-  }
-  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; }
-  a { text-decoration: none; color: inherit; }
-
-  .page-header { padding: 64px 48px 48px; border-bottom: 1px solid var(--border); }
-  .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
-  h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 600; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
-  .subtitle { font-size: 15px; color: var(--text-dim); max-width: 520px; line-height: 1.8; }
-
-  /* 4-member grid: 2 up top, 2 below */
-  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--border); }
-
-  .member { padding: 48px 40px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.25s; }
-  .member:nth-child(2n) { border-right: none; }
-  .member:nth-last-child(-n+2) { border-bottom: none; }
-  .member:hover { background: rgba(197,151,58,0.04); }
-
-  .member-avatar { width: 72px; height: 72px; border-radius: 50%; background: rgba(197,151,58,0.12); border: 1px solid rgba(197,151,58,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: var(--gold-light); margin-bottom: 20px; }
-  .member-role { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-  .member-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--cream); margin-bottom: 10px; line-height: 1.2; }
-  .member-dept { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 20px; }
-  .member-divider { width: 32px; height: 1px; background: var(--border); margin-bottom: 16px; }
-  .member-detail { font-size: 12px; color: var(--text-dim); letter-spacing: 0.5px; }
-
-  .join-band { padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 24px; }
-  .join-text h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--cream); margin-bottom: 8px; }
-  .join-text p { font-size: 14px; color: var(--text-dim); }
-  .btn-gold { display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--navy); font-weight: 500; font-size: 14px; white-space: nowrap; transition: background 0.2s; }
-  .btn-gold:hover { background: var(--gold-light); }
-
-  @media (max-width: 768px) {
-    .page-header { padding: 40px 24px 32px; }
-    h1 { font-size: 32px; }
-    .team-grid { grid-template-columns: 1fr; }
-    .member { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 32px 24px; }
-    .member:last-child { border-bottom: none !important; }
-    .join-band { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<title>Core Team — Research &amp; Debate Society</title>
+<meta name="description" content="Meet the core team behind the Research &amp; Debate Society.">
+<link rel="canonical" href="https://research-debate-society.github.io/rds-official/rds-team.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rds-styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XSXDY2PG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3XSXDY2PG7');
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Core Team — Research & Debate Society">
+  <meta property="og:description" content="Meet the founding team of the Research & Debate Society.">
+  <meta property="og:url" content="https://research-debate-society.github.io/rds-official/rds-team.html">
+  <meta property="og:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
+  <meta property="og:site_name" content="Research & Debate Society">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Core Team — Research & Debate Society">
+  <meta name="twitter:description" content="Meet the founding team of the Research & Debate Society.">
+  <meta name="twitter:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
 </head>
 <body>
 
-<div class="page-header">
-  <div class="eyebrow">The People Behind the Work</div>
+<nav class="site-nav">
+  <a class="nav-brand" href="index.html">RDS</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rds-articles.html">Articles</a>
+    <a href="rds-opinion-articles.html">Opinion</a>
+    <a href="rds-research-articles.html">Research</a>
+    <a href="rds-review-articles.html">Reviews</a>
+    <a href="rds-team.html" class="active">Team</a>
+    <a href="rds-about.html">About</a>
+    <a href="rds-contact.html">Contact</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Research &amp; Debate Society</div>
   <h1>Core Team</h1>
-  <p class="subtitle">Meet the students and researchers driving the Research &amp; Debate Society at Islamia College University Peshawar.</p>
+  <p>The students and contributors who make the Research &amp; Debate Society possible.</p>
 </div>
 
 <div class="team-grid">
 
-  <div class="member">
-    <div class="member-avatar">AR</div>
-    <div class="member-role">Founder &amp; President</div>
-    <div class="member-name">Abdul Rehman</div>
-    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
-    <div class="member-divider"></div>
-    <div class="member-detail">3rd Year Undergraduate</div>
+  <div class="team-card">
+    <div class="team-role">Founder &amp; President</div>
+    <div class="team-name">Abdul Rehman</div>
+    <div class="team-links">
+      <a class="team-link" href="mailto:abdulrehmanpol.science@gmail.com">abdulrehmanpol.science@gmail.com</a>
+    </div>
   </div>
 
-  <div class="member">
-    <div class="member-avatar">BR</div>
-    <div class="member-role">Co-Founder &amp; Editor</div>
-    <div class="member-name">Bilal Rehman</div>
-    <div class="member-dept">Research Assistant — I<br>CECOS-RMI Precision Medicine Lab, Peshawar</div>
-    <div class="member-divider"></div>
-    <div class="member-detail">Research &amp; Editorial Lead</div>
+  <div class="team-card">
+    <div class="team-role">Co-Founder &amp; Editor</div>
+    <div class="team-name">Bilal Rehman</div>
+    <div class="team-links">
+      <a class="team-link" href="mailto:bilal.cobam@gmail.com">bilal.cobam@gmail.com</a>
+    </div>
   </div>
 
-  <div class="member">
-    <div class="member-avatar">SN</div>
-    <div class="member-role">Vice President</div>
-    <div class="member-name">Shehzad Nazeer</div>
-    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
-    <div class="member-divider"></div>
-    <div class="member-detail">3rd Year Undergraduate</div>
+  <div class="team-card">
+    <div class="team-role">Vice President</div>
+    <div class="team-name">Shehzad Nazeer</div>
+    <div class="team-links">
+      <a class="team-link" href="mailto:shehzadnazeer101@gmail.com">shehzadnazeer101@gmail.com</a>
+    </div>
   </div>
 
-  <div class="member">
-    <div class="member-avatar">MR</div>
-    <div class="member-role">General Secretary</div>
-    <div class="member-name">Muhammad Riaz</div>
-    <div class="member-dept">Department of Political Science<br>Islamia College Peshawar</div>
-    <div class="member-divider"></div>
-    <div class="member-detail">3rd Year Undergraduate</div>
+  <div class="team-card">
+    <div class="team-role">General Secretary</div>
+    <div class="team-name">Muhammad Riaz</div>
+    <div class="team-links">
+      <a class="team-link" href="mailto:riazshahabkhel01@gmail.com">riazshahabkhel01@gmail.com</a>
+    </div>
   </div>
 
 </div>
 
-<div class="join-band">
-  <div class="join-text">
-    <h3>Want to contribute?</h3>
-    <p>Submit an article, opinion piece, or research paper to be published on our platform.</p>
+<div class="footer-band">
+  <div>
+    <div class="footer-name">Research &amp; Debate Society</div>
+    <div class="footer-detail">Peshawar, Khyber Pakhtunkhwa</div>
   </div>
-  <a class="btn-gold" href="https://sites.google.com/view/research-and-debate-society/contact-us">Submit Your Work</a>
+  <a class="footer-contact" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
 </div>
 
 </body>
